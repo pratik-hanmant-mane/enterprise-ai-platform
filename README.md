@@ -1,138 +1,153 @@
-Enterprise AI Platform
+# Enterprise AI Platform
 
-1. What problem does this application solve?
+A production-ready enterprise backend platform built with **FastAPI**, **PostgreSQL**, and modern software architecture principles. The platform is designed to demonstrate scalable backend engineering, cloud-native development, AI integration, and enterprise software design.
 
-Modern organizations use many disconnected systems (ERP, CRM, HRMS, document management, email, chat, etc.). Employees waste time searching for information, performing repetitive tasks, and manually moving data between systems.
+---
 
-The Enterprise AI Platform acts as an intelligent backend that connects business applications, automates workflows, provides AI-powered assistance, and exposes secure APIs for enterprise integrations.
+## Overview
 
-The platform is designed to demonstrate enterprise software engineering, cloud-native architecture, and AI capabilities in a production-ready system.
+Enterprise AI Platform is a long-term portfolio project focused on building a production-grade backend system capable of supporting enterprise applications and AI-powered business services.
 
-2. Who are the users?
-Employees
-Search enterprise knowledge
-Ask AI questions
-Upload documents
-View notifications
-Manage tasks
-Managers
-Review dashboards
-Approve requests
-Track workflows
-Generate reports
-Administrators
-Manage users and roles
-Configure integrations
-Monitor services
-Manage AI settings
-AI Agents
-Process documents
-Answer questions
-Execute workflows
-Summarize information
-Trigger business actions
-External Systems
-ERP
-CRM
-HRMS
-Payment gateways
-Email providers
-Third-party APIs
-3. Which services will it eventually contain?
-Phase 1
-User Service
-Authentication Service
-Role & Permission Service
-Notification Service
-Phase 2
-Document Service
-File Storage
-Audit Logs
-Search Service
-Phase 3
-AI Service
-Prompt Management
-Embedding Service
-Vector Database Integration
-Phase 4
-Workflow Engine
-Background Job Service
-Event Bus
-Scheduler
-Phase 5
-API Gateway
-Integration Service
-Webhook Service
-External Connectors
-Phase 6
-Monitoring
-Metrics
-Logging
-Tracing
-Health Checks
-Phase 7
-Multi-tenancy
-Billing
-Organization Management
-Subscription Management
-4. Which AI features will be added later?
-Retrieval-Augmented Generation (RAG)
+Rather than being a tutorial or demo application, this project evolves incrementally to showcase modern backend engineering practices, cloud infrastructure, distributed systems, DevOps, and enterprise AI capabilities.
 
-Employees can ask questions based on company documents.
+---
 
-Intelligent Document Processing
+## Goals
 
-Extract information from PDFs, invoices, contracts, and forms.
+* Build scalable REST APIs
+* Apply Clean Architecture principles
+* Implement secure authentication and authorization
+* Design maintainable service-oriented architecture
+* Integrate enterprise AI capabilities
+* Demonstrate production deployment practices
 
-AI Chat Assistant
+---
 
-Enterprise chatbot with access to business knowledge.
+## Technology Stack
 
-AI Workflow Assistant
+### Backend
 
-Generate reports, emails, summaries, and automate repetitive business tasks.
+* Python
+* FastAPI
+* SQLAlchemy
+* Alembic
+* Pydantic
 
-AI Agents
+### Database
 
-Autonomous agents that can:
+* PostgreSQL
+* Redis (planned)
 
-Schedule jobs
-Read documents
-Trigger workflows
-Send notifications
-Call enterprise APIs
-Recommendation Engine
+### Cloud & DevOps
 
-Suggest actions based on user activity.
+* Docker
+* GitHub Actions
+* AWS
+* Kubernetes
+* Terraform
 
-Semantic Search
+### AI
 
-Search documents using meaning instead of exact keywords.
+* LangGraph
+* Vector Database
+* Retrieval-Augmented Generation (RAG)
+* Model Context Protocol (MCP)
+* AI Agents
 
-Prompt Management
+---
 
-Store, version, and test prompts centrally.
+## Project Structure
 
-MCP Integration
+```text
+enterprise-ai-platform/
+│
+├── app/
+├── tests/
+├── docs/
+├── .venv/
+├── README.md
+├── requirements.txt
+└── .gitignore
+```
 
-Allow AI models to securely interact with enterprise tools and services using the Model Context Protocol.
+---
 
-Why I think this project is the right fit
+## Current Status
 
-There are two common approaches:
+🚧 Project initialization in progress.
 
-Build a business product (like an ERP or e-commerce system).
-Build an engineering platform that showcases architecture, cloud, integrations, and AI.
+### Completed
 
-For your goal of becoming an Enterprise AI Engineer, I recommend the second approach. It lets you demonstrate:
+* Repository initialized
+* Development environment configured
+* FastAPI setup
+* Git version control
 
-Clean architecture
-Scalable backend design
-Authentication and authorization
-API design
-Background processing
-Event-driven patterns
-Cloud deployment
-AI integration
-Observability
-Security
+### Planned
+
+* User Management
+* Authentication & Authorization
+* PostgreSQL integration
+* Background jobs
+* AI services
+* Docker support
+* AWS deployment
+* Kubernetes
+* Enterprise integrations
+
+---
+
+## Getting Started
+
+### Clone the repository
+
+```bash
+git clone git@github.com:pratik-hanmant-mane/enterprise-ai-platform.git
+cd enterprise-ai-platform
+```
+
+### Create a virtual environment
+
+```bash
+python3 -m venv .venv
+source .venv/bin/activate
+```
+
+### Install dependencies
+
+```bash
+pip install -r requirements.txt
+```
+
+### Run the application
+
+```bash
+uvicorn app.main:app --reload
+```
+
+Open:
+
+* http://127.0.0.1:8000
+* http://127.0.0.1:8000/docs
+
+---
+
+## Roadmap
+
+* Project Foundation
+* Clean Architecture
+* Authentication & Authorization
+* Database & Migrations
+* Background Processing
+* Docker & CI/CD
+* Cloud Deployment
+* Observability
+* AI Integration
+* Event-Driven Architecture
+* Microservices
+
+---
+
+## License
+
+This project is licensed under the MIT License.
