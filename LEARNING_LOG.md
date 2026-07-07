@@ -64,3 +64,24 @@
 
 ### Questions
 - Why do enterprise applications use layered architecture?
+
+## Week 2 - Day 1
+
+### Topics Covered
+- SQLAlchemy Engine
+- Session
+- Connection Pool
+- Declarative Base
+- Transaction boundaries
+
+### Key Learnings
+- Engine manages the connection pool.
+- Sessions are created per request.
+- Sessions borrow connections from the Engine.
+- Repositories should not own transaction boundaries.
+
+### Enterprise Takeaway
+Engine manages connections.
+Session manages transactions.
+Repository manages persistence.
+Service manages business logic.
