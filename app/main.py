@@ -5,7 +5,7 @@ from fastapi import FastAPI
 from app.config.settings import settings
 from app.core.logging import setup_logging
 import logging
-
+from app.api.v1.users import router as user_router
 
 # ---------------------------------------------------------------------
 # Configure logging
@@ -48,7 +48,7 @@ app = FastAPI(
     lifespan=lifespan,
 )
 
-
+app.include_router(user_router) # Include the user router
 # ---------------------------------------------------------------------
 # Root Endpoint
 # ---------------------------------------------------------------------

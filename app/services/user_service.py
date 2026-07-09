@@ -42,3 +42,9 @@ class UserService:
         self.session.commit()
 
         return user
+
+    def get_user(
+        self,
+        user_id: int,
+    ):
+        return self.user_repository.get_by_id(user_id)
