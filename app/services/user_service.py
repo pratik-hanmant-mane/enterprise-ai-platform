@@ -2,6 +2,7 @@ from sqlalchemy.orm import Session
 
 from app.models.user import User
 from app.repositories.user_repository import UserRepository
+from app.exceptions.user import UserAlreadyExistsError
 
 
 class UserService:
@@ -26,9 +27,7 @@ class UserService:
         existing_user = self.user_repository.get_by_email(email)
 
         if existing_user:
-            raise ValueError(
-                f"User with email '{email}' already exists."
-            )
+            raise UserAlreadyExistsError(email)
 
         user = User(
             first_name=first_name,
