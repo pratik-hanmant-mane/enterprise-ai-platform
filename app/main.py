@@ -6,7 +6,7 @@ from app.config.settings import settings
 from app.core.logging import setup_logging
 import logging
 from app.api.v1.users import router as user_router
-
+from app.exceptions.handlers import register_exception_handlers
 # ---------------------------------------------------------------------
 # Configure logging
 # ---------------------------------------------------------------------
@@ -47,7 +47,7 @@ app = FastAPI(
     debug=settings.debug,
     lifespan=lifespan,
 )
-
+register_exception_handlers(app)
 app.include_router(user_router) # Include the user router
 # ---------------------------------------------------------------------
 # Root Endpoint

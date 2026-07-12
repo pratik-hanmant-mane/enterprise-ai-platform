@@ -21,17 +21,11 @@ def create_user(
 ):
     service = UserService(session)
 
-    try:
-        return service.create_user(
-            first_name=payload.first_name,
-            last_name=payload.last_name,
-            email=payload.email,
-        )
-    except ValueError as e:
-        raise HTTPException(
-            status_code=status.HTTP_409_CONFLICT,
-            detail=str(e),
-        )
+    return service.create_user(
+        first_name=payload.first_name,
+        last_name=payload.last_name,
+        email=payload.email,
+    )
 
 
 @router.get(

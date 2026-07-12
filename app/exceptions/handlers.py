@@ -1,0 +1,19 @@
+from fastapi import FastAPI, Request
+from fastapi.responses import JSONResponse
+
+from app.exceptions.base import BusinessException
+
+
+def register_exception_handlers(app: FastAPI):
+
+    @app.exception_handler(BusinessException)
+    async def business_exception_handler(
+        request: Request,
+        exc: BusinessException,
+    ):
+        return JSONResponse(
+            status_code=exc.status_code,
+            content={
+                "detail": exc.message,
+            },
+        )
