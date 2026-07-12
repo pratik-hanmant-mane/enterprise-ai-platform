@@ -23,10 +23,13 @@ class UserService:
         """
         Create a new user.
         """
-
+        logger.info("Creating user")
         existing_user = self.user_repository.get_by_email(email)
 
         if existing_user:
+            logger.warning(
+                "Duplicate email detected."
+            )
             raise UserAlreadyExistsError(email)
 
         user = User(
@@ -36,13 +39,13 @@ class UserService:
         )
 
         self.user_repository.create(user)
-
+        logger.info("User created successfully")
         # Transaction boundary
         self.session.commit()
-
+        logger.info("Transaction committed successfully")
         return user
 
-    def get_user(
+    def get_user(   
         self,
         user_id: int,
     ):
