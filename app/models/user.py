@@ -39,3 +39,13 @@ class User(Base):
         default=datetime.utcnow,
         nullable=False,
     )
+
+    updated_at: Mapped[datetime] = mapped_column(
+        DateTime,
+        default=datetime.utcnow,
+        nullable=True,
+    )
+    password_hash: Mapped[str] = mapped_column(
+        String(255),
+        nullable=True,
+    )
