@@ -67,3 +67,9 @@ class BaseRepository(Generic[ModelType]):
         Check whether an entity exists.
         """
         return self.get_by_id(entity_id) is not None
+
+    def commit(self) -> None:
+        """
+        Commit the current transaction.
+        """
+        self.session.commit()

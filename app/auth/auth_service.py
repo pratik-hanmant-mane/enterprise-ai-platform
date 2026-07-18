@@ -1,4 +1,4 @@
-from datetime import datetime, UTC
+from datetime import UTC, datetime
 
 from sqlalchemy.orm import Session
 
@@ -10,10 +10,20 @@ from app.repositories.user_repository import UserRepository
 
 
 class AuthService:
+    """
+    Service responsible for user authentication.
+    """
+
     def __init__(self, session: Session):
         self.user_repository = UserRepository(session)
 
-    def login(self, request: LoginRequest) -> TokenResponse:
+    def login(
+        self,
+        request: LoginRequest,
+    ) -> TokenResponse:
+        """
+        Authenticate a user and return an access token.
+        """
         user = self.user_repository.get_by_email(request.email)
 
         if user is None:

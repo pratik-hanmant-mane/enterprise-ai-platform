@@ -22,14 +22,3 @@ class UserRepository(BaseRepository[User]):
         """
         stmt = select(User).where(User.email == email)
         return self.session.scalar(stmt)
-
-    def last_login(
-        self,
-        user_id: int,
-    ) -> None:
-        """
-        Update the last login timestamp for a user.
-        """
-        stmt = update(User).where(User.id == user_id).values(last_login=datetime.utcnow())
-        self.session.execute(stmt)
-        self.session.commit()
