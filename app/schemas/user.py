@@ -23,5 +23,5 @@ class UserResponse(BaseModel):
     last_name: str
     email: EmailStr
     created_at: datetime
-
+    last_login: datetime
     model_config = ConfigDict(from_attributes=True)
