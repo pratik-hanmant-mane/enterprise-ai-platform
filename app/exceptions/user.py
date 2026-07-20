@@ -13,10 +13,3 @@ class UserAlreadyExistsError(BusinessException):
             status_code=status.HTTP_409_CONFLICT,
         )
 
-class InvalidCredentialsError(BusinessException):
-
-    def __init__(self):
-        super().__init__(
-            message="Invalid email or password.",
-            status_code=status.HTTP_401_UNAUTHORIZED,
-        )

@@ -5,7 +5,7 @@ from sqlalchemy.orm import Session
 from app.auth.jwt import create_access_token
 from app.auth.password import verify_password
 from app.auth.schemas import LoginRequest, TokenResponse
-from app.exceptions.user import InvalidCredentialsError
+from app.exceptions.auth import InvalidCredentialsError, AuthError
 from app.repositories.user_repository import UserRepository
 
 
@@ -44,7 +44,8 @@ class AuthService:
                 "sub": str(user.id),
             }
         )
-
+        if not access_token:
+            raise AuthError("Failed to create access token")
         return TokenResponse(
             access_token=access_token,
             token_type="Bearer",
