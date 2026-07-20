@@ -4,7 +4,7 @@ from app.models.user import User
 from app.repositories.user_repository import UserRepository
 from app.exceptions.user import UserAlreadyExistsError
 import logging
-from app.db.session import get_db
+
 logger = logging.getLogger(__name__)
 
 class UserService:
