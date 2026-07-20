@@ -1,4 +1,4 @@
-from datetime import UTC, datetime
+from datetime import datetime, timezone
 
 from sqlalchemy.orm import Session
 
@@ -35,7 +35,7 @@ class AuthService:
         ):
             raise InvalidCredentialsError()
 
-        user.last_login = datetime.now(UTC)
+        user.last_login = datetime.now(timezone.utc)
 
         self.user_repository.commit()
 

@@ -3,7 +3,9 @@ from sqlalchemy.orm import Session
 
 from app.models.user import User
 from app.repositories.base_repository import BaseRepository
+import logging
 
+logger = logging.getLogger(__name__)
 
 class UserRepository(BaseRepository[User]):
     """

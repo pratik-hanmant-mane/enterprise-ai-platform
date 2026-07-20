@@ -6,6 +6,7 @@ from app.config.settings import settings
 from app.core.logging import setup_logging
 import logging
 from app.api.v1.users import router as user_router
+from app.api.v1.auth import router as auth_router
 from app.exceptions.handlers import register_exception_handlers
 # ---------------------------------------------------------------------
 # Configure logging
@@ -26,12 +27,6 @@ async def lifespan(app: FastAPI):
     logger.info("Starting %s...", settings.app_name)
     logger.info("Environment: %s", settings.app_environment)
 
-    # Future:
-    # - Initialize database connection
-    # - Connect Redis
-    # - Initialize AI models
-    # - Register schedulers
-
     yield
 
     logger.info("Shutting down %s...", settings.app_name)
@@ -49,6 +44,7 @@ app = FastAPI(
 )
 register_exception_handlers(app)
 app.include_router(user_router) # Include the user router
+app.include_router(auth_router) # Include the auth router
 # ---------------------------------------------------------------------
 # Root Endpoint
 # ---------------------------------------------------------------------

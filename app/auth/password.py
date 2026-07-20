@@ -12,4 +12,4 @@ def verify_password(
     hashed_password: str,
 ) -> bool:
     
-    return password_hasher.verify(hashed_password, plain_password)
+    return password_hasher.verify(plain_password,hashed_password)
