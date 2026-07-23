@@ -47,8 +47,15 @@ class UserService:
         logger.info("Transaction committed successfully")
         return user
 
-    def get_user(   
+    def get_user_by_id(   
         self,
         user_id: int,
     ):
         return self.user_repository.get_by_id(user_id)
+
+    def get_user_by_email(
+        self,
+        email: str,
+    ) -> User | None:
+        logger.info("Fetching user by email")
+        return self.user_repository.get_by_email(email)

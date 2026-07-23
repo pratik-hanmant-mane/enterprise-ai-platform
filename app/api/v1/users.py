@@ -38,7 +38,7 @@ def get_user(
 ):
     service = UserService(session)
 
-    user = service.get_user(user_id)
+    user = service.get_user_by_id(user_id)
 
     if user is None:
         raise HTTPException(
